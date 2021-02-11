@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <title>FoodHunt </title>
+    <meta name="description" content>
+    <meta name="author" content>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <script src="https://kit.fontawesome.com/c9a392e4e1.js" crossorigin="anonymous"></script>
+
+    <!--font-family link-->
+    <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Istok Web' rel='stylesheet'>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!--css link-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon-wholec.png" type="image/x-icon">
+
+
+
+</head>
+
+<body>
+ 
+    <header class="navigation">
+        <div class="brand">
+            <a href="">
+                Food<span class = "hunt">Hunt</span>
+
+            </a>
+        </div>
+      
+        <ul>
+            <li class="navItems active"><a href="#">Home</a></li>
+            <!-- <li class="navItems "><a href="#">Order now</a></li> -->
+          
+            <div class="login-box">
+                <a class="login-text" href="">Login</a>
+                <a class="login-btn" data-toggle="modal" data-target="#LoginModal"  href="#">
+                    <i class="far fa-user-circle"></i>
+                </a>
+            </div>
+
+        </ul>
+    </header>
+<!------------------------------------------------ Modal ---------------------------------------------->
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <!-- =================modal=================== -->
+        <div class = "modals" id = "modals">
+            <header class = "modTitle">
+                <div class = "tablets">
+                    <div id = "btn"></div> 
+                    <a class= "sign sign-In active" id = "sIn" onclick = "signin()" href = "#">Login</a>
+                    <hr class = "hr">
+                    <a class = "sign sing-Up" id = "sUp" onclick = "signup()" href = "#">Sign-Up</a>
+                </div>
+            </header>
+                    
+         
+
+        
+            <form id = "logForm" class = " Data LogData" method="GET">
+                
+                <div class = "form userName" for=""  id = "user1">Username</div>
+                <input required class = "bar userLog" type="text" name="userLog" id="userLog">
+ 
+                <div class = "form password" for="" id = "pass1">Password</div>
+                <input required class = "bar passLog" type="password" name="passLog" id="passLog">
+                
+                <button type = "button" id = "loginButton" class = " submit btn btn-success btn-lg">Login</button>
+                
+               
+            
+            </form>
+            <form id = "regiForm" class = " Data signData" method="GET">
+                
+                <div class = "form eMail" for="" >E-mail</div>
+                <input required class = "bar mailSign" type="email" name="mailSign" id="mailSign">
+                
+                <div class = "form userName" for="" >Username</div>
+                <input required class = "bar userSign" type="text" name="userSign" id="userSign">
+
+                <div class = "form password" for="">Password</div>
+                <input required class = "bar passSign" type="password" name="passSign" id="passSign">
+
+                <!-- <div class = "form con-password" for="">Confirm Password</div>
+                <input class = "bar" type="password" name="" id=""> -->
+
+                <button type = "button" id = "signupButton" class = " submit btn btn-success btn-lg">Sign-Up</button>
+
+            </form>
+
+            
+            <div class = "or">
+                <h4 class = "cond">Or</h4>
+            </div>
+
+            <div class = "icons"> 
+                <a href = "https://www.facebook.com/login.php" target="_blank"><img src = "fb.png" alt = "Facebook" title = "Facebook" ></a><hr>
+                <a href = "https://www.facebook.com/login.php" target="_blank"><img src = "google.png" alt = "Gmail" title = "Gmail"></a>
+            </div> 
+           
+        </div>
+      </div>
+    </div>
+  </div>
+    <section class="banner">
+        <h2 class="banner-title pb-0">Food <span>Hunt</span> </h2>
+        <h4 class="pt-0 pb-4">Hungry? Let's Hunt.</h4>
+        <form action="./restraunts/index.html">
+            <div class="search">
+                <select name="place" id="">
+                    <option value="">Banjara Hills</option>
+                    <option value="">Panjagutta</option>
+                    <option value="">SR Nagar</option>
+                    <option value="">Kukatpally</option>
+                </select>
+                <input type="search" class="search" placeholder="Search here..." name="" id="">
+                <button type="submit" class="btn btn-warning btn-md"><i class="fas fa-search"></i> </button>
+            </div>
+
+
+    </section>
+
+
+    <!-- <section class="catagories ">
+        <div class="container-fluid">
+            
+            <div class="row justify-content-around">
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5 text-white">
+                <img class="cardImage"
+                        src="https://images.unsplash.com/photo-1584178639036-613ba57e5e39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        title="burger" alt="burger">
+                    <div class="card-img-overlay ">
+                        <h5 class="card-title">Burger</h5>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-5 col-lg-3 m-5 order-sm-0 order-md-0 order-lg-1">
+                    <h3 class="cata ">Categories!</h3>
+    
+                </div>
+                
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5 text-white">
+                    <img class="cardImage"
+                        src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        title="Pizza" alt="pizza">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Pizza</h5>
+                    </div>
+                </div>
+
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5  text-white">
+                    <img class="cardImage" title="indian"
+                        src="https://images.unsplash.com/photo-1517244906-fa053b624b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="indian">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Indian</h5>
+                    </div>
+                </div>
+
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5   text-white">
+                    <img class="cardImage"
+                        src="https://images.unsplash.com/photo-1542803417-f2be3270347d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        href="https://www.youtube.com" title="Chinese" alt='chinese'>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Chinese</h5>
+                    </div>
+                </div>
+
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5  text-white">
+                    <img class="cardImage"
+                        src="https://images.unsplash.com/photo-1538301258798-f3fdb8bbc3c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        title="Salad" alt='Salad'>
+                    <div class="card-img-overlay" href="https://www.youtube.com/">
+                        <h5 class="card-title">Salad</h5>
+                    </div>
+                </div>
+
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5 text-white">
+                    <img class="cardImage"
+                        src="https://images.unsplash.com/photo-1505616485412-adfcd5561e31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        title="Ice Cream" alt='Ice cream'>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Ice cream</h5>
+                    </div>
+                </div>
+
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5  text-white">
+                    <img class="cardImage"
+                        src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        title="Cakes&Candies" alt='Cakes&Candies'>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Cakes&Candies</h5>
+                    </div>
+                </div>
+
+                <div class="card col-sm-6 col-md-5 col-lg-3 order-1 m-5  text-white">
+                    <img class="cardImage"
+                        src="https://images.unsplash.com/photo-1522039906375-50d8e4d9550a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        title="Shakes" alt='shakes'>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Shakes</h5>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            
+        </div>
+    </section> -->
+    
+    <section class="categories">
+        <div class="category-head"><h2 class="p-4">Categories</h2></div>
+        <div class="category-body">
+            <div class="category-block block1">
+                <h2 class="block-name">Burger</h2>
+            </div>
+            <div class="category-block block2">
+                <h2 class="block-name">Pizza</h2>
+            </div>
+            <div class="category-block block3">
+                <h2 class="block-name">Icecream</h2>
+            </div>
+            <div class="category-block block4">
+                <h2 class="block-name">Beverages</h2>
+            </div>
+            <div class="category-block block5">
+                <h2 class="block-name">Indian</h2>
+            </div>
+            <div class="category-block block6">
+                <h2 class="block-name">Chinese</h2>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="why mt-0 pt-0">
+        <div class="row mt-0 pt-0 why-row d-flex justify-content-center">
+            <div class="col-4 mt-0 pt-0 why-block  ">
+                <div class="why-img mt-0 pt-0 d-flex justify-content-center">
+                    <img class="mt-0" src="./images/No_min_order.png" alt="">
+                </div>
+                <div class="why-info pt-5" >
+                    <h5 class="d-flex justify-content-center">No Minimum order</h5>
+                    <p class="small text-center">Order in for yourself or for the group, <br> with no restrictions on order value</p>
+                </div>
+
+            </div>
+            <div class="col-4 why-block ">
+                <div class="why-img d-flex justify-content-center">
+                    <img src="./images/Live_order.png" alt="">
+                </div>
+                <div class="why-info pt-5">
+                    <h5 class="d-flex justify-content-center">Live Order</h5>
+                    <p class="small text-center"> Know where your order is at all times, <br> from the restaurant to your doorstep</p>
+                </div>
+            </div>
+            <div class="col-4 why-block sfd ">
+                <div class="why-img d-flex justify-content-center">
+                    <img src="./images/Super_fast_delivery2.png" alt="">
+                </div>
+                <div class="why-info sfd2 pt-5">
+                    <h5 class="d-flex justify-content-center ">Super Fast Delivery</h5>
+                    <p class="small text-center">
+                    Experience FoodHunt's superfast delivery <br> for food delivered fresh & on time </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="locations">
+        <div class="location-head"><h4 class="p-5">We Deliver to</h4></div>
+        <div class="location-body d-flex justify-content-center">
+            <iframe src="https://www.atlistmaps.com/map/c0021134-ee19-4636-a5ad-7a00887f6b54?share=true" allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <ul class="location-list list1 ">
+              <li class="location-item location1">Mumbai</li>
+              <li class="location-item location2">Delhi</li>
+              <li class="location-item location3">Chennai</li>
+              <li class="location-item location4">Hyderabad</li>
+              <li class="location-item location5">Kolkata</li>
+              <li class="location-item location6">Ranchi</li>
+              
+              
+          </ul>
+          <ul class="location-list list2 ">
+            <li class="location-item location7">Noida</li>
+            <li class="location-item location8">Warangal</li>
+            <li class="location-item location9">Jaipur</li>
+            <li class="location-item location10">Kota</li>
+            <li class="location-item location11">Chandigarh</li>
+            <li class="location-item location12">Bhopal</li>
+              
+             
+              
+            </ul>
+            <ul class="location-list list3 ">
+
+                <li class="location-item location13">Gwalior</li>
+                <li class="location-item location14">Ahmedabad</li>
+                <li class="location-item location15">Lucknow</li>
+                <li class="location-item location16">Agra</li>
+                <li class="location-item location17">Patna</li>
+                <li class="location-item location18">Nagpur</li>
+              
+              
+                
+            </ul>
+              <ul class="location-list list4 ">
+
+                <li class="location-item location19">Ballarsha</li>
+                <li class="location-item location20">Chandrapur</li>
+                <li class="location-item location21">Pune</li>
+                <li class="location-item location22">Bhuvaneshwar</li>
+                <li class="location-item location23">Rourkela</li>
+                <li class="location-item location24">Vishakhapatnam</li>
+            </ul>
+
+<!-- 
+                <li class="location-item location25">Kakinada</li>
+              <li class="location-item location26">Ongole</li>
+              <li class="location-item location27">Nellore</li>
+              <li class="location-item location28">Rajamundry</li>
+              <li class="location-item location29">Vijayavada</li>
+              <li class="location-item location30">Khammam</li>
+              <li class="location-item location31">Banglore</li>
+              <li class="location-item location32">Mysure</li>
+              <li class="location-item location33">Manglore</li>
+              <li class="location-item location34">Suratkal</li>
+              <li class="location-item location35">Indore</li>
+              <li class="location-item location36">Vadodara</li>
+              <li class="location-item location37">Ghaziabad</li>
+              <li class="location-item location38">Ludhiana</li>
+              <li class="location-item location39">Nashik</li>
+              <li class="location-item location40">Faridabad</li>
+              <li class="location-item location41">Meerut</li>
+              <li class="location-item location42">Rajkot</li>
+
+              <li class="location-item location43">Varanasi</li>
+              <li class="location-item location44">Amritsar</li>
+              <li class="location-item location45">Guwahati</li>
+              <li class="location-item location46">Trichy</li>
+              <li class="location-item location47">Trivendram</li>
+              <li class="location-item location48">Coimbatttore</li>
+              <li class="location-item location49">Madurai</li>
+              <li class="location-item location50">Thane</li>
+              <li class="location-item location51">Aligarh</li>
+              <li class="location-item location52">Karimnagar</li>
+              <li class="location-item location53">Shimla</li>
+              <li class="location-item location54">Howrah</li>
+              <li class="location-item location55">Aurangabad</li>
+              <li class="location-item location56">Jodhpur</li> -->
+        </div>
+    </section>
+    <footer>
+        <div class="row ">
+            <div class="col-6 p-5">
+                <div class="brand large">
+                    <a href="">
+                        Food<span class = "hunt">Hunt</span>
+        
+                    </a> 
+                </div>
+                <div class="social-media d-flex align-items-end pl-4">
+                    <i class="fa fa-facebook p-4" aria-hidden="true"></i>
+                    <i class="fa fa-instagram p-4" aria-hidden="true"></i>
+                    <i class="fa fa-twitter p-4 " aria-hidden="true"></i> 
+                </div>
+                <hr class="bg-light"> 
+                <p class="footer-text small">© Copyright 2020 FoodHunt.</p>
+
+            </div>
+            <div class="col-3 link-block">
+                <ul>
+                    <li class="footerlink f1-link1"><a href="#" class="link">About</a></li>
+                    <li class="footerlink f1-link2"><a href="#" class="link small">Read Our Blog</a></li>
+                    <li class="footerlink f1-link3"><a href="./business/index.html" class="link small">Create a business account</a></li>
+                    <li class="footerlink f1-link4"><a href="./business-afterlogin/index.html" class="link small">Add Your Restuarant</a></li>
+                    <li class="footerlink f1-link5"><a href="" class="link small">Sign Up to deliver</a></li>
+                   
+                </ul>
+            </div>
+            <div class="col-3 link-block">
+                <ul>
+                    <li class="footerlink f2-link1"><a href="" class="link">Get Help</a></li>
+                    <li class="footerlink f2-link2"><a href="" class="link small">Read FAQs</a></li>
+                    <li class="footerlink f2-link3"><a href="" class="link small">View All cities</a></li>
+                    <li class="footerlink f2-link4"><a href="" class="link small">Restaurants Near me</a></li>
+                    <li class="footerlink f2-link5"><a href="" class="link small">Save on your first order</a></li>
+                    <li class="footerlink f2-link6 small">Language:<a href="" data-toggle="modal" data-target="#LoginModal" class="link">English</a></li></div>
+                </ul>
+        </div>
+    
+        
+    </footer>
+</section>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <!--javascript link-->
+    <script type="text/javascript" src="webpage.js"></script>
+</body>
+
+</html>
